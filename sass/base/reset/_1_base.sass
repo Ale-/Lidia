@@ -1,0 +1,55 @@
+/**
+ *  General reset and default styles
+ */
+
+html
+  font-size: $size_base
+
+body
+  position: relative
+  line-height: $line_height
+  font-family: get_map($font_primary, $name), get_map($font_primary, $alt) !important
+  background-color: $color_background !important
+  @for $i from 1 through 6
+    h#{$i}
+      +h($i)
+  .big
+    font-size: #{$size_big}em
+  small,
+  .small
+    font-size: #{$size_small}em
+  img
+    max-width: 100%
+    height: auto
+  p
+    margin: 0
+  a
+    text-decoration: none !important
+  +links($color_links, $color_links_hovered)
+
+@if $header:
+  #{$header}
+    height: $header_height
+    padding: $header_padding
+    color: $color_header_text
+    background-color: $color_header_background
+    +links($color_links_header, $color_links_header_hovered)
+
+@if $footer:
+  #{$footer}
+    height: $footer_height
+    padding: $footer_padding
+    color: $color_footer_text
+    background-color: $color_footer_background
+    +links($color_links_footer, $color_links_footer_hovered)
+
+@if sticky_footer:
+  +sticky_footer($header, $content, $footer)
+
+@if $grid_classes
+  +gridsystem_framework()
+
+::moz-selection,
+::selection
+  background-color: $color_selection_background
+  color: $color_selection_text

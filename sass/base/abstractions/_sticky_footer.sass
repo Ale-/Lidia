@@ -1,0 +1,31 @@
+@import breakpoints
+@import compass/css3/box-sizing
+
+=sticky_footer($header_selector, $content_selector, $footer_selector, $toolbar_body_class: null, $toolbar_height: null)
+  #{$header_selector},
+  #{$footer_selector}
+    position: absolute
+    width: 100%
+    z-index: 1
+  #{$header_selector}
+    top: 0
+    +breakpoint(md)
+      height: $header_height
+  #{$content_selector}
+    position: relative
+    +box-sizing(border-box)
+    padding: $header_height 0 $footer_height
+    min-height: 100vh
+  #{$footer_selector}
+    bottom: 0
+    +breakpoint(md)
+      height: $footer_height
+  @if $toolbar_body_class
+    .#{$toolbar_body_class}
+      padding-top: 0 !important
+      #{$header}
+        top: $toolbar_height
+      #{$content}
+        padding-top: $header_height + $toolbar_height
+
+  

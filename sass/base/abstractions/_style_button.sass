@@ -1,0 +1,29 @@
+// Buttons
+
+@import compass/css3/transition
+
+=style_button($color_background, $color_hovered, $color_text, $height: $button_height)
+  height: $height
+  padding: 0 $height/2
+  +transition(background-color, .1s ease)
+  background-color: $color_background
+  color: $color_text
+  line-height: 1
+  &:hover
+    background-color: $color_hovered
+
+@function button_hover($color)
+  @return darken($color, 10%)
+
+=button_success($height: $button_height)
+  +style_button($color_success, button_hover($color_success), white, $height)
+  
+=button_warning($height: $button_height)
+  +style_button($color_warning, button_hover($color_warning), white, $height)
+
+=button_danger($height: $button_height)
+  +style_button($color_calm, button_hover($color_calm), white, $height)
+
+=button_calm($height: $button_height)
+  +style_button($color_calm, button_hover($color_calm), white, $height)
+

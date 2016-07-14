@@ -1,0 +1,14 @@
+/**
+ *  Treat text element as header
+ *
+
+$font_headers : ( name: 'free-sans', url: '', alt: 'helvetica, arial, sans-serif') !default
+$font_headers_weight : bold !default
+$font_headers_height : 1.2 !default
+$size_headers  : (2.6rem, 2.15rem, 1.7rem, 1.25rem, 1rem, 0.85rem) !default
+
+=h($n)
+  font-family: $font_headers, $font_alt
+  font-weight: $font_headers_weight
+  line-height: $font_headers_height
+  font-size: nth($size_headers, $n)

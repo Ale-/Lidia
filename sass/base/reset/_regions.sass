@@ -1,0 +1,23 @@
+/**
+ *  Reset region styles
+ */
+
+#{$header}
+  +box-sizing(border-box)
+  background-color: $color_header_background
+  color: $color_header_text
+  padding: $header_padding
+  +links($color_links_header, $color_links_header_hovered, .25s ease)
+
+#{$content}
+  +links($color_links, $color_links_hovered, .25s ease)
+  color: $color_text
+
+#{$footer}
+  +box-sizing(border-box)
+  background-color: $color_footer_background
+  color: $color_footer_text
+  padding: $footer_padding
+  +links($color_links_footer, $color_links_footer_hovered, .25s ease)
+
++sticky_footer('#page-header', '#page-main', '#page-footer', 'toolbar-fixed', 39px)

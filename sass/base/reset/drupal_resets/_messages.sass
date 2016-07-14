@@ -1,0 +1,24 @@
+section.region-messages
+  padding: 40px
+  a
+    font-weight: bold
+  text-decoration: none
+  > div
+    +links(white, #ddd)
+    color: white
+    padding: 20px
+    &[role=contentinfo]
+      background-color: $color_success
+    &[role=alert]
+      background-color: $color_danger
+  > i
+    float: right
+    padding-right: 10px
+    &:hover
+      cursor: pointer
+    &:before
+      content: "⨯"
+      font-size: 40px
+      font-family: arial
+      color: rgba(black, .33)
+    

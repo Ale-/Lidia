@@ -1,0 +1,14 @@
+// Set link colors inside an element
+
+=links($normal, $hover, $color-transition: none)
+  a
+    @if $color-transition != none
+      +transition(color #{$color-transition})
+    &:link, &:visited
+      color: $normal !important
+    &:hover
+      color: $hover !important
+    &:active
+      color: $normal !important
+
+

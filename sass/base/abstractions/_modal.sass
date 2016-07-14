@@ -1,0 +1,30 @@
+=bootstrap_modal($modal_background, $modal_header_background, $modal_text, $modal_header_text, $modal_width, $modal_padding, $modal_top)
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 5000
+  background: rgba(black, .5)
+  display: none
+  .modal-dialog
+    width: $modal_width
+    margin: 0 auto 
+    +transition(transform, .3s ease)
+  .modal-header
+    background-color: $modal_header_background 
+    padding: $modal_padding
+    color: $modal_header_text
+  .modal-body
+    background-color: $modal_background 
+    color: $modal_text
+    padding: $modal_padding
+  &.fade
+    +opacity(0)
+    +transition(opacity .15s linear)
+    .modal-dialog
+      +transform( translate(0,0))
+  &.fade.in
+    +opacity(1)
+    .modal-dialog
+      +transform( translate(0, $modal_top) )

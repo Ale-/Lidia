@@ -1,0 +1,21 @@
+// Forms
+
+=generic_form
+  label
+    display: block
+  input[type=text],
+  input[type=password],
+  textarea
+    background: #f5f5f5
+    border: 0
+    padding: $m/2
+    margin: $m/2 0 $m
+  .form-submit
+    margin-top: m(2)
+    +button_success
+  .description
+    color: lighten($color_text, 20%)
+    margin-bottom: $m
+
+#user-login-form
+  +generic_form
