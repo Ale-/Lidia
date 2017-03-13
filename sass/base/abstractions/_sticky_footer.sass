@@ -1,6 +1,8 @@
 @import breakpoints
 @import compass/css3/box-sizing
 
+
+
 =sticky_footer($header_selector, $content_selector, $footer_selector, $toolbar_body_class: null, $toolbar_height: null)
   #{$header_selector},
   #{$footer_selector}
@@ -27,5 +29,3 @@
         top: $toolbar_height
       #{$content}
         padding-top: $header_height + $toolbar_height
-
-  
