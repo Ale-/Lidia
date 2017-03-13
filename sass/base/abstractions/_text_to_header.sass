@@ -8,7 +8,7 @@ $font_headers_height : 1.2 !default
 $size_headers  : (2.6rem, 2.15rem, 1.7rem, 1.25rem, 1rem, 0.85rem) !default
 
 =h($n)
-  font-family: $font_headers, $font_alt
+  font-family: map-get($font_headers, name), map-get($font_headers, alt)
   font-weight: $font_headers_weight
   line-height: $font_headers_height
   font-size: nth($size_headers, $n)
